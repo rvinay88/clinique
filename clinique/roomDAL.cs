@@ -25,7 +25,7 @@ namespace clinique
             mySqlConnection.Close();
         }
 
-        public int CreateRoom(Room room)
+        public int CreateRoom(Room room2)
         {
             int result = 0;
 
@@ -33,8 +33,8 @@ namespace clinique
             mySqlCommand.CommandText = "CreateRoom";
             mySqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
             mySqlCommand.Connection = mySqlConnection;
-            mySqlCommand.Parameters.AddWithValue("@roomID", room.RoomID);
-            mySqlCommand.Parameters.AddWithValue("@roomName", room.RoomName);
+            mySqlCommand.Parameters.AddWithValue("@roomID", room2.RoomID);
+            mySqlCommand.Parameters.AddWithValue("@roomName", room2.RoomName);
             result = mySqlCommand.ExecuteNonQuery();
             
             return result;

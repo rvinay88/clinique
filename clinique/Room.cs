@@ -16,5 +16,6 @@ namespace clinique
             RoomID = roomID;
             RoomName = roomName;
         }
+
     }
 }
