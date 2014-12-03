@@ -51,6 +51,7 @@ namespace clinique
                 finally
                 {
                     rDAL.CloseConnection();
+                    MessageBox.Show("Room Created!");
                 }
 
                 //return result;
