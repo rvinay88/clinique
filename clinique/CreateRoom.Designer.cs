@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtRoomID = new System.Windows.Forms.TextBox();
             this.txtRoomName = new System.Windows.Forms.TextBox();
             this.grpCreateRoom = new System.Windows.Forms.GroupBox();
@@ -35,7 +36,9 @@
             this.lblRoomName = new System.Windows.Forms.Label();
             this.btnCreateRoom = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.CreateRoomErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.grpCreateRoom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CreateRoomErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // txtRoomID
@@ -93,6 +96,7 @@
             this.btnCreateRoom.TabIndex = 4;
             this.btnCreateRoom.Text = "Create";
             this.btnCreateRoom.UseVisualStyleBackColor = true;
+            this.btnCreateRoom.Click += new System.EventHandler(this.btnCreateRoom_Click);
             // 
             // btnCancel
             // 
@@ -102,6 +106,11 @@
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // CreateRoomErrorProvider
+            // 
+            this.CreateRoomErrorProvider.ContainerControl = this;
             // 
             // CreateRoom
             // 
@@ -113,6 +122,7 @@
             this.Text = "Create Room";
             this.grpCreateRoom.ResumeLayout(false);
             this.grpCreateRoom.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CreateRoomErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -126,5 +136,6 @@
         private System.Windows.Forms.Button btnCreateRoom;
         private System.Windows.Forms.Label lblRoomName;
         private System.Windows.Forms.Label lblRoomID;
+        private System.Windows.Forms.ErrorProvider CreateRoomErrorProvider;
     }
 }
