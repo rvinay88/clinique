@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace clinique
 {
@@ -24,7 +25,7 @@ namespace clinique
             mySqlConnection.Close();
         }
 
-        public int CreateRoom(Room Room)
+        public int CreateRoom(Room room)
         {
             int result = 0;
 

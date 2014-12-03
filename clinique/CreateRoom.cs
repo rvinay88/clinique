@@ -28,7 +28,7 @@ namespace clinique
         {
             if (ValidateForm())
             {
-                
+                Room room = new Room(int.Parse(txtRoomID.Text), txtRoomName.Text);
             }
         }
 
