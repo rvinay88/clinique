@@ -45,12 +45,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Patient.cs" />
     <Compile Include="CreatePatient.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CreatePatient.Designer.cs">
       <DependentUpon>CreatePatient.cs</DependentUpon>
     </Compile>
+    <Compile Include="PatientDAL.cs" />
     <Compile Include="Room.cs" />
     <Compile Include="CreateRoom.cs">
       <SubType>Form</SubType>
