@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace clinique
 {
@@ -19,13 +20,48 @@ namespace clinique
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (ValidateForm()) { }
+            if (ValidateForm()) {
+
+                Doctor doctor1 = new Doctor(txtDoctorName.Text, txtDoctorPhone.Text, txtSpecialization.Text, txtEmployment.Text);
+
+                DoctorDAL dDAL = new DoctorDAL(ConfigurationManager.ConnectionStrings["CliniqueDB"].ConnectionString);
+
+                int result = 0;
+
+                try
+                {
+                    dDAL.OpenConnection();
+                    result = dDAL.CreateDoctor(doctor1);
+                    if (result == -1)
+                    {
+                        MessageBox.Show("Successfully Inserted");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    dDAL.CloseConnection();
+
+                    txtSpecialization.Clear();
+                    txtEmployment.Clear();
+                    txtDoctorPhone.Clear();
+                    txtDoctorName.Clear();
+                }                
+            }
         }
 
         private bool ValidateForm()
         {
             int val = 0;
-
+            if (!(txtEmployment.Text == "FullTime" || txtEmployment.Text == "PartTime"))
+            {
+                val = -1;
+                CreateDoctorErrorProvider.SetError(txtEmployment, "This value has to be either PartTime or FullTime");
+                CreateDoctorErrorProvider.BlinkRate = 0;
+            }
             if (txtDoctorName.Text == "")
             {
                 val = -1;

@@ -36,7 +36,7 @@ namespace clinique
             mySqlCommand.Parameters.AddWithValue("@DoctorName", doctor2.DoctorName);
             mySqlCommand.Parameters.AddWithValue("@DoctorPhone", doctor2.DoctorPhone);
             mySqlCommand.Parameters.AddWithValue("@Specialization", doctor2.Specialization);
-            mySqlCommand.Parameters.AddWithValue("@Employment", doctor2.Employment);
+            mySqlCommand.Parameters.AddWithValue("@Employment", doctor2.Employment.ToString());
             result = mySqlCommand.ExecuteNonQuery();
             
             return result;
