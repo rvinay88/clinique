@@ -61,6 +61,7 @@
     </Compile>
     <Compile Include="Doctor.cs" />
     <Compile Include="DoctorDAL.cs" />
+    <Compile Include="getRooms.cs" />
     <Compile Include="Patient.cs" />
     <Compile Include="CreatePatient.cs">
       <SubType>Form</SubType>

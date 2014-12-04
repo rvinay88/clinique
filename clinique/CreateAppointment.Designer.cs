@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.grpCreateAppointment = new System.Windows.Forms.GroupBox();
+            this.lblAvailableRooms = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.dtpAppointmentDate = new System.Windows.Forms.DateTimePicker();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -51,6 +53,8 @@
             // 
             // grpCreateAppointment
             // 
+            this.grpCreateAppointment.Controls.Add(this.lblAvailableRooms);
+            this.grpCreateAppointment.Controls.Add(this.button3);
             this.grpCreateAppointment.Controls.Add(this.dtpAppointmentDate);
             this.grpCreateAppointment.Controls.Add(this.button2);
             this.grpCreateAppointment.Controls.Add(this.button1);
@@ -71,6 +75,24 @@
             this.grpCreateAppointment.TabIndex = 0;
             this.grpCreateAppointment.TabStop = false;
             this.grpCreateAppointment.Text = "Create Appointment";
+            // 
+            // lblAvailableRooms
+            // 
+            this.lblAvailableRooms.AutoSize = true;
+            this.lblAvailableRooms.Location = new System.Drawing.Point(339, 219);
+            this.lblAvailableRooms.Name = "lblAvailableRooms";
+            this.lblAvailableRooms.Size = new System.Drawing.Size(0, 13);
+            this.lblAvailableRooms.TabIndex = 16;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(339, 183);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 15;
+            this.button3.Text = "Check";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // dtpAppointmentDate
             // 
@@ -225,5 +247,7 @@
         private System.Windows.Forms.TextBox txtPatientNumber;
         private System.Windows.Forms.TextBox txtPatientName;
         private System.Windows.Forms.ErrorProvider CreateAppointmentErrorProvider;
+        private System.Windows.Forms.Label lblAvailableRooms;
+        private System.Windows.Forms.Button button3;
     }
 }

@@ -128,5 +128,23 @@ namespace clinique
             }
             
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            getRooms gr = new getRooms(dtpAppointmentDate.Value.ToShortDateString(), txtAppointmentTime.Text.Trim());
+            String[] result123 = new String[10];
+            string finalValues = "";
+
+            result123 = gr.GetRoomProc(gr);
+            for (int i = 0; i < result123.Length; i++)
+            {
+                if (result123[i] != "")
+                {
+                    finalValues = finalValues + " " + result123[i];
+                }
+            }
+
+            lblAvailableRooms.Text = finalValues;
+        }
     }
 }
