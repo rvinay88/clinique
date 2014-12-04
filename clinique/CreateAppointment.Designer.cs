@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpCreateAppointment = new System.Windows.Forms.GroupBox();
             this.dtpAppointmentDate = new System.Windows.Forms.DateTimePicker();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -45,32 +45,32 @@
             this.txtPatientNumber = new System.Windows.Forms.TextBox();
             this.txtPatientName = new System.Windows.Forms.TextBox();
             this.CreateAppointmentErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.groupBox1.SuspendLayout();
+            this.grpCreateAppointment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CreateAppointmentErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // grpCreateAppointment
             // 
-            this.groupBox1.Controls.Add(this.dtpAppointmentDate);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtRoomNumber);
-            this.groupBox1.Controls.Add(this.txtAppointmentTime);
-            this.groupBox1.Controls.Add(this.txtDoctorName);
-            this.groupBox1.Controls.Add(this.txtPatientNumber);
-            this.groupBox1.Controls.Add(this.txtPatientName);
-            this.groupBox1.Location = new System.Drawing.Point(22, 28);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(500, 304);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "grpCreateAppointment";
+            this.grpCreateAppointment.Controls.Add(this.dtpAppointmentDate);
+            this.grpCreateAppointment.Controls.Add(this.button2);
+            this.grpCreateAppointment.Controls.Add(this.button1);
+            this.grpCreateAppointment.Controls.Add(this.label6);
+            this.grpCreateAppointment.Controls.Add(this.label5);
+            this.grpCreateAppointment.Controls.Add(this.label4);
+            this.grpCreateAppointment.Controls.Add(this.label3);
+            this.grpCreateAppointment.Controls.Add(this.label2);
+            this.grpCreateAppointment.Controls.Add(this.label1);
+            this.grpCreateAppointment.Controls.Add(this.txtRoomNumber);
+            this.grpCreateAppointment.Controls.Add(this.txtAppointmentTime);
+            this.grpCreateAppointment.Controls.Add(this.txtDoctorName);
+            this.grpCreateAppointment.Controls.Add(this.txtPatientNumber);
+            this.grpCreateAppointment.Controls.Add(this.txtPatientName);
+            this.grpCreateAppointment.Location = new System.Drawing.Point(22, 28);
+            this.grpCreateAppointment.Name = "grpCreateAppointment";
+            this.grpCreateAppointment.Size = new System.Drawing.Size(500, 304);
+            this.grpCreateAppointment.TabIndex = 0;
+            this.grpCreateAppointment.TabStop = false;
+            this.grpCreateAppointment.Text = "Create Appointment";
             // 
             // dtpAppointmentDate
             // 
@@ -197,11 +197,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 344);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grpCreateAppointment);
             this.Name = "CreateAppointment";
             this.Text = "Create Appointment";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grpCreateAppointment.ResumeLayout(false);
+            this.grpCreateAppointment.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CreateAppointmentErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
@@ -209,7 +209,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grpCreateAppointment;
         private System.Windows.Forms.DateTimePicker dtpAppointmentDate;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
