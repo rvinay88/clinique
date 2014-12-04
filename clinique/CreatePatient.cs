@@ -32,7 +32,7 @@ namespace clinique
                 {
                     pDAL.OpenConnection();
                     result = pDAL.CreatePatient(patient1);
-                    if (result == 1)
+                    if (result == -1)
                     {
                         MessageBox.Show("Successfully Inserted");
                     }
@@ -44,7 +44,10 @@ namespace clinique
                 finally
                 {
                     pDAL.CloseConnection();
-                    MessageBox.Show("Patient Created!");
+
+                    txtPatientName.Clear();
+                    txtPatientNumber.Clear();
+                    txtHealthIssue.Clear();
                 }
             }
         }

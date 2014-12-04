@@ -39,7 +39,7 @@ namespace clinique
                 {
                     rDAL.OpenConnection();
                     result = rDAL.CreateRoom(room1);
-                    if (result == 1)
+                    if (result == -1)
                     {
                         MessageBox.Show("Successfully Inserted");
                     }
@@ -51,7 +51,8 @@ namespace clinique
                 finally
                 {
                     rDAL.CloseConnection();
-                    MessageBox.Show("Room Created!");
+                    txtRoomID.Clear();
+                    txtRoomName.Clear();
                 }
 
                 //return result;
