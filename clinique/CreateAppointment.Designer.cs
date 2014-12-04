@@ -49,12 +49,14 @@
             this.txtPatientNumber = new System.Windows.Forms.TextBox();
             this.txtPatientName = new System.Windows.Forms.TextBox();
             this.CreateAppointmentErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.button3 = new System.Windows.Forms.Button();
             this.grpCreateAppointment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CreateAppointmentErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // grpCreateAppointment
             // 
+            this.grpCreateAppointment.Controls.Add(this.button3);
             this.grpCreateAppointment.Controls.Add(this.lblDoctorAvailableTime);
             this.grpCreateAppointment.Controls.Add(this.btnCheckDoctorAvailability);
             this.grpCreateAppointment.Controls.Add(this.lblAvailableRooms);
@@ -239,6 +241,16 @@
             // 
             this.CreateAppointmentErrorProvider.ContainerControl = this;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(431, 149);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 19;
+            this.button3.Text = "Clear";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // CreateAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,5 +288,6 @@
         private System.Windows.Forms.Button btnCheckAvailableRooms;
         private System.Windows.Forms.Button btnCheckDoctorAvailability;
         private System.Windows.Forms.Label lblDoctorAvailableTime;
+        private System.Windows.Forms.Button button3;
     }
 }

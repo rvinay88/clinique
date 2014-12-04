@@ -14,6 +14,11 @@ namespace clinique
 {
     public partial class CreateAppointment : Form
     {
+        public string availableTimeForDoctor = "";
+        public string availableRooms = "";
+        public String[] result123 = new String[100];
+        public String[] result1234 = new String[10];
+
         public CreateAppointment()
         {
             InitializeComponent();
@@ -41,19 +46,19 @@ namespace clinique
                     result = aDAL.CreateAppointment(appointment1);
                     if (result == -1)
                     {
-                        MessageBox.Show("Successfully Inserted");
+                        MessageBox.Show("Successfully Created Appointment!");
                     }
                     
                     int result1 = 0;
                     result1 = aDAL.RemoveRoomAvailability(txtRoomNumber.Text, dtpAppointmentDate.Value.ToShortDateString(), txtAppointmentTime.Text);
                     if(result1 == -1) {
-                        MessageBox.Show("Removed Room avail");
+                        //MessageBox.Show("Removed Room avail");
                     }
 
                     int result2 = 0;
                     result2 = aDAL.RemoveDoctorAvailability(txtDoctorName.Text, dtpAppointmentDate.Value.ToShortDateString(), txtAppointmentTime.Text);
                     if(result2 == -1) {
-                        MessageBox.Show("Removed Doctor avail");
+                        //MessageBox.Show("Removed Doctor avail");
                     }
                 }
                 catch (Exception ex)
@@ -86,7 +91,6 @@ namespace clinique
                 CreateAppointmentErrorProvider.BlinkRate = 0;
             }
             // If invalid throw error 
-
             for (int i = 0; i < ValidTimes.Length; i++)
             {
                 int pos = Array.IndexOf(ValidTimes, txtAppointmentTime.Text);
@@ -130,6 +134,16 @@ namespace clinique
                 CreateAppointmentErrorProvider.BlinkRate = 0;
             }
 
+            if (Array.IndexOf(result123, txtAppointmentTime.Text.Trim()) != -1)
+            {
+                MessageBox.Show("Valid Time");
+            }
+
+            else
+            {
+                MessageBox.Show("InvalidTime");
+            }
+
             if (val < 0)
             {
                 return false;
@@ -143,43 +157,51 @@ namespace clinique
 
         private void btnCheckAvailableRooms_Click(object sender, EventArgs e)
         {
+             Array.Clear(result1234, 0, 10);
+             lblAvailableRooms.Text = "";
+            
             getRooms gr = new getRooms(dtpAppointmentDate.Value.ToShortDateString(), txtAppointmentTime.Text.Trim());
-            String[] result123 = new String[10];
-            string finalValues = "";
-
-            result123 = gr.GetRoomProc(gr);
-            for (int i = 0; i < result123.Length; i++)
+           
+            result1234 = gr.GetRoomProc(gr);
+            for (int i = 0; i < result1234.Length; i++)
             {
-                if (result123[i] != "")
+                if (result1234[i] != "")
                 {
-                    finalValues = finalValues + " " + result123[i];
+                    availableRooms = availableRooms + " " + result1234[i];
                 }
             }
 
-            lblAvailableRooms.Text = finalValues;
+            lblAvailableRooms.Text = availableRooms;
         }
 
         private void btnCheckDoctorAvailability_Click(object sender, EventArgs e)
         {
             getDoctorAvailability gd = new getDoctorAvailability(dtpAppointmentDate.Value.ToShortDateString(), txtDoctorName.Text.Trim());
-            String[] result123 = new String[100];
-            string finalValues = "";
+
+            Array.Clear(result123, 0, 100);
+            lblDoctorAvailableTime.Text = "";
 
             result123 = gd.getAvailabilityProc(gd);
             for (int i = 0; i < result123.Length; i++)
             {
                 if (result123[i] != "")
                 {
-                    finalValues = finalValues + "\n" + result123[i];
+                    availableTimeForDoctor = availableTimeForDoctor + "\n" + result123[i];
                 }
             }
 
-            lblDoctorAvailableTime.Text = "Available Times" + finalValues;
+            
+            lblDoctorAvailableTime.Text = "Available Times" + availableTimeForDoctor;
         }
 
         private void grpCreateAppointment_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            lblDoctorAvailableTime.Text = "";
         }
     }
 }
