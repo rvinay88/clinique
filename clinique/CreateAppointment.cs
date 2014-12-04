@@ -43,6 +43,18 @@ namespace clinique
                     {
                         MessageBox.Show("Successfully Inserted");
                     }
+                    
+                    int result1 = 0;
+                    result1 = aDAL.RemoveRoomAvailability(txtRoomNumber.Text, dtpAppointmentDate.Value.ToShortDateString(), txtAppointmentTime.Text);
+                    if(result1 == -1) {
+                        MessageBox.Show("Removed Room avail");
+                    }
+
+                    int result2 = 0;
+                    result2 = aDAL.RemoveDoctorAvailability(txtDoctorName.Text, dtpAppointmentDate.Value.ToShortDateString(), txtAppointmentTime.Text);
+                    if(result2 == -1) {
+                        MessageBox.Show("Removed Doctor avail");
+                    }
                 }
                 catch (Exception ex)
                 {

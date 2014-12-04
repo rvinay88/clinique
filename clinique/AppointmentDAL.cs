@@ -43,5 +43,37 @@ namespace clinique
             
             return result;
         }
+
+        public int RemoveRoomAvailability(string RoomNumber, string Date, string Time)
+        {
+            int result = 0;
+
+            SqlCommand mySqlCommand = new SqlCommand();
+            mySqlCommand.CommandText = "RemoveRoomAvailability";
+            mySqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
+            mySqlCommand.Connection = mySqlConnection;
+            mySqlCommand.Parameters.AddWithValue("@RoomNumber", RoomNumber);
+            mySqlCommand.Parameters.AddWithValue("@Date", Date);
+            mySqlCommand.Parameters.AddWithValue("@Time", Time);
+            result = mySqlCommand.ExecuteNonQuery();
+
+            return result;
+        }
+
+        public int RemoveDoctorAvailability(string DoctorName, string Date, string Time)
+        {
+            int result = 0;
+
+            SqlCommand mySqlCommand = new SqlCommand();
+            mySqlCommand.CommandText = "RemoveDoctorAvailability";
+            mySqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
+            mySqlCommand.Connection = mySqlConnection;
+            mySqlCommand.Parameters.AddWithValue("@DoctorName", DoctorName);
+            mySqlCommand.Parameters.AddWithValue("@Date", Date);
+            mySqlCommand.Parameters.AddWithValue("@Time", Time);
+            result = mySqlCommand.ExecuteNonQuery();
+
+            return result;
+        }
     }
 }
