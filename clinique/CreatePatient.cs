@@ -54,7 +54,43 @@ namespace clinique
 
         private bool ValidateForm()
         {
-            return true;
+            int val = 0;
+            if (txtPatientNumber.Text == "")
+            {
+                val = -1;
+                CreatePatientErrorProvider.SetError(txtPatientNumber, "This field cannot be empty");
+                CreatePatientErrorProvider.BlinkRate = 0;
+            }
+
+            if (txtPatientNumber.Text.Length < 10)
+            {
+                val = -1;
+                CreatePatientErrorProvider.SetError(txtPatientNumber, "Phone Number should be 10 digits");
+                CreatePatientErrorProvider.BlinkRate = 0;
+            }
+
+            if (txtPatientName.Text == "")
+            {
+                val = -1;
+                CreatePatientErrorProvider.SetError(txtPatientName, "Patient Name cannot be empty");
+                CreatePatientErrorProvider.BlinkRate = 0;
+            }
+
+            if(txtHealthIssue.Text == "")
+            {
+                val = -1;
+                CreatePatientErrorProvider.SetError(txtHealthIssue, "This field cannot be empty");
+                CreatePatientErrorProvider.BlinkRate = 0;
+            }
+
+            if (val < 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }
