@@ -129,7 +129,7 @@ namespace clinique
             
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnCheckAvailableRooms_Click(object sender, EventArgs e)
         {
             getRooms gr = new getRooms(dtpAppointmentDate.Value.ToShortDateString(), txtAppointmentTime.Text.Trim());
             String[] result123 = new String[10];
@@ -145,6 +145,29 @@ namespace clinique
             }
 
             lblAvailableRooms.Text = finalValues;
+        }
+
+        private void btnCheckDoctorAvailability_Click(object sender, EventArgs e)
+        {
+            getDoctorAvailability gd = new getDoctorAvailability(dtpAppointmentDate.Value.ToShortDateString(), txtDoctorName.Text.Trim());
+            String[] result123 = new String[100];
+            string finalValues = "";
+
+            result123 = gd.getAvailabilityProc(gd);
+            for (int i = 0; i < result123.Length; i++)
+            {
+                if (result123[i] != "")
+                {
+                    finalValues = finalValues + "\n" + result123[i];
+                }
+            }
+
+            lblDoctorAvailableTime.Text = "Available Times" + finalValues;
+        }
+
+        private void grpCreateAppointment_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

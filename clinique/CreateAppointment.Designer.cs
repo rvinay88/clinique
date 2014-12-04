@@ -30,8 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.grpCreateAppointment = new System.Windows.Forms.GroupBox();
+            this.lblDoctorAvailableTime = new System.Windows.Forms.Label();
+            this.btnCheckDoctorAvailability = new System.Windows.Forms.Button();
             this.lblAvailableRooms = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnCheckAvailableRooms = new System.Windows.Forms.Button();
             this.dtpAppointmentDate = new System.Windows.Forms.DateTimePicker();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -53,8 +55,10 @@
             // 
             // grpCreateAppointment
             // 
+            this.grpCreateAppointment.Controls.Add(this.lblDoctorAvailableTime);
+            this.grpCreateAppointment.Controls.Add(this.btnCheckDoctorAvailability);
             this.grpCreateAppointment.Controls.Add(this.lblAvailableRooms);
-            this.grpCreateAppointment.Controls.Add(this.button3);
+            this.grpCreateAppointment.Controls.Add(this.btnCheckAvailableRooms);
             this.grpCreateAppointment.Controls.Add(this.dtpAppointmentDate);
             this.grpCreateAppointment.Controls.Add(this.button2);
             this.grpCreateAppointment.Controls.Add(this.button1);
@@ -71,10 +75,31 @@
             this.grpCreateAppointment.Controls.Add(this.txtPatientName);
             this.grpCreateAppointment.Location = new System.Drawing.Point(22, 28);
             this.grpCreateAppointment.Name = "grpCreateAppointment";
-            this.grpCreateAppointment.Size = new System.Drawing.Size(500, 304);
+            this.grpCreateAppointment.Size = new System.Drawing.Size(673, 304);
             this.grpCreateAppointment.TabIndex = 0;
             this.grpCreateAppointment.TabStop = false;
             this.grpCreateAppointment.Text = "Create Appointment";
+            this.grpCreateAppointment.Enter += new System.EventHandler(this.grpCreateAppointment_Enter);
+            // 
+            // lblDoctorAvailableTime
+            // 
+            this.lblDoctorAvailableTime.AutoSize = true;
+            this.lblDoctorAvailableTime.Location = new System.Drawing.Point(448, 40);
+            this.lblDoctorAvailableTime.MaximumSize = new System.Drawing.Size(100, 0);
+            this.lblDoctorAvailableTime.Name = "lblDoctorAvailableTime";
+            this.lblDoctorAvailableTime.Size = new System.Drawing.Size(81, 13);
+            this.lblDoctorAvailableTime.TabIndex = 18;
+            this.lblDoctorAvailableTime.Text = "Available Times";
+            // 
+            // btnCheckDoctorAvailability
+            // 
+            this.btnCheckDoctorAvailability.Location = new System.Drawing.Point(339, 149);
+            this.btnCheckDoctorAvailability.Name = "btnCheckDoctorAvailability";
+            this.btnCheckDoctorAvailability.Size = new System.Drawing.Size(75, 23);
+            this.btnCheckDoctorAvailability.TabIndex = 17;
+            this.btnCheckDoctorAvailability.Text = "Check";
+            this.btnCheckDoctorAvailability.UseVisualStyleBackColor = true;
+            this.btnCheckDoctorAvailability.Click += new System.EventHandler(this.btnCheckDoctorAvailability_Click);
             // 
             // lblAvailableRooms
             // 
@@ -84,15 +109,15 @@
             this.lblAvailableRooms.Size = new System.Drawing.Size(0, 13);
             this.lblAvailableRooms.TabIndex = 16;
             // 
-            // button3
+            // btnCheckAvailableRooms
             // 
-            this.button3.Location = new System.Drawing.Point(339, 183);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Check";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnCheckAvailableRooms.Location = new System.Drawing.Point(339, 183);
+            this.btnCheckAvailableRooms.Name = "btnCheckAvailableRooms";
+            this.btnCheckAvailableRooms.Size = new System.Drawing.Size(75, 23);
+            this.btnCheckAvailableRooms.TabIndex = 15;
+            this.btnCheckAvailableRooms.Text = "Check";
+            this.btnCheckAvailableRooms.UseVisualStyleBackColor = true;
+            this.btnCheckAvailableRooms.Click += new System.EventHandler(this.btnCheckAvailableRooms_Click);
             // 
             // dtpAppointmentDate
             // 
@@ -218,7 +243,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(567, 344);
+            this.ClientSize = new System.Drawing.Size(707, 344);
             this.Controls.Add(this.grpCreateAppointment);
             this.Name = "CreateAppointment";
             this.Text = "Create Appointment";
@@ -248,6 +273,8 @@
         private System.Windows.Forms.TextBox txtPatientName;
         private System.Windows.Forms.ErrorProvider CreateAppointmentErrorProvider;
         private System.Windows.Forms.Label lblAvailableRooms;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnCheckAvailableRooms;
+        private System.Windows.Forms.Button btnCheckDoctorAvailability;
+        private System.Windows.Forms.Label lblDoctorAvailableTime;
     }
 }
