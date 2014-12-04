@@ -64,6 +64,8 @@ namespace clinique
         {
             int val = 0;
 
+            string[] ValidTimes = new string[] { "9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00" };
+
             if (txtAppointmentTime.Text == "")
             {
                 val = -1;
@@ -71,12 +73,27 @@ namespace clinique
                 CreateAppointmentErrorProvider.BlinkRate = 0;
             }
 
-            if (txtDoctorName.Text == "")
+            for (int i = 0; i < ValidTimes.Length; i++)
             {
-                val = -1;
-                CreateAppointmentErrorProvider.SetError(txtDoctorName, "This field cannot be empty");
-                CreateAppointmentErrorProvider.BlinkRate = 0;
+                int pos = Array.IndexOf(ValidTimes, txtAppointmentTime.Text);
+                if (!(pos > -1))
+                {
+                    val = -1;
+                }
+                if (val == -1)
+                {
+                    CreateAppointmentErrorProvider.SetError(txtAppointmentTime, "Invalid Time entry. Please enter a value between 9:00 - 17:00");
+                    CreateAppointmentErrorProvider.BlinkRate = 0;
+                    txtAppointmentTime.Clear();
+                }
             }
+
+                if (txtDoctorName.Text == "")
+                {
+                    val = -1;
+                    CreateAppointmentErrorProvider.SetError(txtDoctorName, "This field cannot be empty");
+                    CreateAppointmentErrorProvider.BlinkRate = 0;
+                }
 
             if (txtPatientName.Text == "")
             {
