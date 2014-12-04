@@ -47,6 +47,11 @@
   <ItemGroup>
     <Compile Include="Appointment.cs" />
     <Compile Include="AppointmentDAL.cs" />
+    <Compile Include="CliniqueDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CliniqueDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CreateAppointment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +122,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="CliniqueDBDataSet.xsc">
+      <DependentUpon>CliniqueDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CliniqueDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CliniqueDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CliniqueDBDataSet.xss">
+      <DependentUpon>CliniqueDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

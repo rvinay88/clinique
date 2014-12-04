@@ -47,7 +47,22 @@ namespace clinique
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'cliniqueDBDataSet.appointment' table. You can move, or remove it, as needed.
+            this.appointmentTableAdapter.Fill(this.cliniqueDBDataSet.appointment);
             
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.appointmentTableAdapter.FillBy(this.cliniqueDBDataSet.appointment);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }
