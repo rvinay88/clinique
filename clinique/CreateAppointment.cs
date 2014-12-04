@@ -62,7 +62,52 @@ namespace clinique
 
         private bool ValidateForm()
         {
-            return true;
+            int val = 0;
+
+            if (txtAppointmentTime.Text == "")
+            {
+                val = -1;
+                CreateAppointmentErrorProvider.SetError(txtAppointmentTime, "This field cannot be empty");
+                CreateAppointmentErrorProvider.BlinkRate = 0;
+            }
+
+            if (txtDoctorName.Text == "")
+            {
+                val = -1;
+                CreateAppointmentErrorProvider.SetError(txtDoctorName, "This field cannot be empty");
+                CreateAppointmentErrorProvider.BlinkRate = 0;
+            }
+
+            if (txtPatientName.Text == "")
+            {
+                val = -1;
+                CreateAppointmentErrorProvider.SetError(txtPatientName, "This field cannot be empty");
+                CreateAppointmentErrorProvider.BlinkRate = 0;
+            }
+
+            if (txtPatientNumber.Text == "")
+            {
+                val = -1;
+                CreateAppointmentErrorProvider.SetError(txtPatientNumber, "This field cannot be empty");
+                CreateAppointmentErrorProvider.BlinkRate = 0;
+            }
+
+            if (txtRoomNumber.Text == "")
+            {
+                val = -1;
+                CreateAppointmentErrorProvider.SetError(txtRoomNumber, "This field cannot be empty");
+                CreateAppointmentErrorProvider.BlinkRate = 0;
+            }
+
+            if (val < 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+            
         }
     }
 }
