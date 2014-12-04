@@ -27,6 +27,8 @@ namespace clinique
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)

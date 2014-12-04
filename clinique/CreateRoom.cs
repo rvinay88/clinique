@@ -23,6 +23,8 @@ namespace clinique
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+            MainForm mainForm = new MainForm();
+            mainForm.Show(); 
         }
 
         private void btnCreateRoom_Click(object sender, EventArgs e)

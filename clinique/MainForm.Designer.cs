@@ -64,8 +64,9 @@
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.addToolStripMenuItem.Text = "Add New";
+            this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // roomsToolStripMenuItem
             // 
@@ -80,6 +81,7 @@
             this.addNewToolStripMenuItem.Name = "addNewToolStripMenuItem";
             this.addNewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addNewToolStripMenuItem.Text = "Add New";
+            this.addNewToolStripMenuItem.Click += new System.EventHandler(this.addNewToolStripMenuItem_Click);
             // 
             // patientToolStripMenuItem
             // 
@@ -94,6 +96,7 @@
             this.addNewToolStripMenuItem1.Name = "addNewToolStripMenuItem1";
             this.addNewToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.addNewToolStripMenuItem1.Text = "Add New";
+            this.addNewToolStripMenuItem1.Click += new System.EventHandler(this.addNewToolStripMenuItem1_Click);
             // 
             // appointmentsToolStripMenuItem
             // 
@@ -106,8 +109,9 @@
             // addNewToolStripMenuItem2
             // 
             this.addNewToolStripMenuItem2.Name = "addNewToolStripMenuItem2";
-            this.addNewToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.addNewToolStripMenuItem2.Size = new System.Drawing.Size(123, 22);
             this.addNewToolStripMenuItem2.Text = "Add New";
+            this.addNewToolStripMenuItem2.Click += new System.EventHandler(this.addNewToolStripMenuItem2_Click);
             // 
             // MainForm
             // 
