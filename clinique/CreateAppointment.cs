@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
+using System.Data.SqlClient;
 
 namespace clinique
 {
@@ -63,15 +64,16 @@ namespace clinique
         private bool ValidateForm()
         {
             int val = 0;
-
+            // Define Valid time slots 
             string[] ValidTimes = new string[] { "9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00" };
-
+            // If empty throw error
             if (txtAppointmentTime.Text == "")
             {
                 val = -1;
                 CreateAppointmentErrorProvider.SetError(txtAppointmentTime, "This field cannot be empty");
                 CreateAppointmentErrorProvider.BlinkRate = 0;
             }
+            // If invalid throw error 
 
             for (int i = 0; i < ValidTimes.Length; i++)
             {
@@ -87,13 +89,13 @@ namespace clinique
                     txtAppointmentTime.Clear();
                 }
             }
-
-                if (txtDoctorName.Text == "")
-                {
-                    val = -1;
-                    CreateAppointmentErrorProvider.SetError(txtDoctorName, "This field cannot be empty");
-                    CreateAppointmentErrorProvider.BlinkRate = 0;
-                }
+            
+            if (txtDoctorName.Text == "")
+            {
+                val = -1;
+                CreateAppointmentErrorProvider.SetError(txtDoctorName, "This field cannot be empty");
+                CreateAppointmentErrorProvider.BlinkRate = 0;
+            }
 
             if (txtPatientName.Text == "")
             {
