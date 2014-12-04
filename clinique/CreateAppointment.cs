@@ -138,7 +138,7 @@ namespace clinique
 
             if (Array.IndexOf(result123, txtAppointmentTime.Text.Trim()) != -1)
             {
-                MessageBox.Show("Valid Time");
+                //MessageBox.Show("Valid Time");
             }
 
             else
@@ -159,7 +159,7 @@ namespace clinique
 
         private void btnCheckAvailableRooms_Click(object sender, EventArgs e)
         {
-             Array.Clear(result1234, 0, 10);
+             
              lblAvailableRooms.Text = "";
             
             getRooms gr = new getRooms(dtpAppointmentDate.Value.ToShortDateString(), txtAppointmentTime.Text.Trim());
@@ -180,7 +180,7 @@ namespace clinique
         {
             getDoctorAvailability gd = new getDoctorAvailability(dtpAppointmentDate.Value.ToShortDateString(), txtDoctorName.Text.Trim());
 
-            Array.Clear(result123, 0, 100);
+           
             lblDoctorAvailableTime.Text = "";
 
             result123 = gd.getAvailabilityProc(gd);
@@ -205,5 +205,6 @@ namespace clinique
         {
             lblDoctorAvailableTime.Text = "";
         }
+
     }
 }

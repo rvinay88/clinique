@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.grpCreateAppointment = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.lblDoctorAvailableTime = new System.Windows.Forms.Label();
             this.btnCheckDoctorAvailability = new System.Windows.Forms.Button();
             this.lblAvailableRooms = new System.Windows.Forms.Label();
@@ -49,7 +50,6 @@
             this.txtPatientNumber = new System.Windows.Forms.TextBox();
             this.txtPatientName = new System.Windows.Forms.TextBox();
             this.CreateAppointmentErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.button3 = new System.Windows.Forms.Button();
             this.grpCreateAppointment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CreateAppointmentErrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -82,6 +82,16 @@
             this.grpCreateAppointment.TabStop = false;
             this.grpCreateAppointment.Text = "Create Appointment";
             this.grpCreateAppointment.Enter += new System.EventHandler(this.grpCreateAppointment_Enter);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(431, 149);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 19;
+            this.button3.Text = "Clear";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // lblDoctorAvailableTime
             // 
@@ -240,16 +250,6 @@
             // CreateAppointmentErrorProvider
             // 
             this.CreateAppointmentErrorProvider.ContainerControl = this;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(431, 149);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "Clear";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // CreateAppointment
             // 

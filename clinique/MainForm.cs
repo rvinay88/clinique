@@ -44,5 +44,10 @@ namespace clinique
             CreatePatient createPatient = new CreatePatient();
             createPatient.Show();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
