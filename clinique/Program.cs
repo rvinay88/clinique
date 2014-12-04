@@ -16,7 +16,7 @@ namespace clinique
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CreateDoctor());
+            Application.Run(new CreateAppointment());
         }
     }
 }
