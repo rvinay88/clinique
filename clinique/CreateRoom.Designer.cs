@@ -32,10 +32,10 @@
             this.txtRoomID = new System.Windows.Forms.TextBox();
             this.txtRoomName = new System.Windows.Forms.TextBox();
             this.grpCreateRoom = new System.Windows.Forms.GroupBox();
-            this.lblRoomID = new System.Windows.Forms.Label();
-            this.lblRoomName = new System.Windows.Forms.Label();
-            this.btnCreateRoom = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btnCreateRoom = new System.Windows.Forms.Button();
+            this.lblRoomName = new System.Windows.Forms.Label();
+            this.lblRoomID = new System.Windows.Forms.Label();
             this.CreateRoomErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.grpCreateRoom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CreateRoomErrorProvider)).BeginInit();
@@ -43,16 +43,16 @@
             // 
             // txtRoomID
             // 
-            this.txtRoomID.Location = new System.Drawing.Point(82, 19);
+            this.txtRoomID.Location = new System.Drawing.Point(107, 19);
             this.txtRoomID.Name = "txtRoomID";
-            this.txtRoomID.Size = new System.Drawing.Size(100, 20);
+            this.txtRoomID.Size = new System.Drawing.Size(164, 20);
             this.txtRoomID.TabIndex = 0;
             // 
             // txtRoomName
             // 
-            this.txtRoomName.Location = new System.Drawing.Point(82, 45);
+            this.txtRoomName.Location = new System.Drawing.Point(107, 52);
             this.txtRoomName.Name = "txtRoomName";
-            this.txtRoomName.Size = new System.Drawing.Size(100, 20);
+            this.txtRoomName.Size = new System.Drawing.Size(164, 20);
             this.txtRoomName.TabIndex = 1;
             // 
             // grpCreateRoom
@@ -65,10 +65,39 @@
             this.grpCreateRoom.Controls.Add(this.txtRoomName);
             this.grpCreateRoom.Location = new System.Drawing.Point(21, 23);
             this.grpCreateRoom.Name = "grpCreateRoom";
-            this.grpCreateRoom.Size = new System.Drawing.Size(199, 139);
+            this.grpCreateRoom.Size = new System.Drawing.Size(400, 232);
             this.grpCreateRoom.TabIndex = 2;
             this.grpCreateRoom.TabStop = false;
             this.grpCreateRoom.Text = "Create Room";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(41, 101);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 5;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnCreateRoom
+            // 
+            this.btnCreateRoom.Location = new System.Drawing.Point(155, 101);
+            this.btnCreateRoom.Name = "btnCreateRoom";
+            this.btnCreateRoom.Size = new System.Drawing.Size(75, 23);
+            this.btnCreateRoom.TabIndex = 4;
+            this.btnCreateRoom.Text = "Create";
+            this.btnCreateRoom.UseVisualStyleBackColor = true;
+            this.btnCreateRoom.Click += new System.EventHandler(this.btnCreateRoom_Click);
+            // 
+            // lblRoomName
+            // 
+            this.lblRoomName.AutoSize = true;
+            this.lblRoomName.Location = new System.Drawing.Point(7, 55);
+            this.lblRoomName.Name = "lblRoomName";
+            this.lblRoomName.Size = new System.Drawing.Size(66, 13);
+            this.lblRoomName.TabIndex = 3;
+            this.lblRoomName.Text = "Room Name";
             // 
             // lblRoomID
             // 
@@ -79,35 +108,6 @@
             this.lblRoomID.TabIndex = 2;
             this.lblRoomID.Text = "Room ID";
             // 
-            // lblRoomName
-            // 
-            this.lblRoomName.AutoSize = true;
-            this.lblRoomName.Location = new System.Drawing.Point(7, 48);
-            this.lblRoomName.Name = "lblRoomName";
-            this.lblRoomName.Size = new System.Drawing.Size(66, 13);
-            this.lblRoomName.TabIndex = 3;
-            this.lblRoomName.Text = "Room Name";
-            // 
-            // btnCreateRoom
-            // 
-            this.btnCreateRoom.Location = new System.Drawing.Point(107, 101);
-            this.btnCreateRoom.Name = "btnCreateRoom";
-            this.btnCreateRoom.Size = new System.Drawing.Size(75, 23);
-            this.btnCreateRoom.TabIndex = 4;
-            this.btnCreateRoom.Text = "Create";
-            this.btnCreateRoom.UseVisualStyleBackColor = true;
-            this.btnCreateRoom.Click += new System.EventHandler(this.btnCreateRoom_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(10, 101);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 5;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // CreateRoomErrorProvider
             // 
             this.CreateRoomErrorProvider.ContainerControl = this;
@@ -116,7 +116,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(240, 192);
+            this.ClientSize = new System.Drawing.Size(433, 267);
             this.Controls.Add(this.grpCreateRoom);
             this.Name = "CreateRoom";
             this.Text = "Create Room";
